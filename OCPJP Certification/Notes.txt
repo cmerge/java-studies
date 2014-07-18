@@ -39,7 +39,7 @@ This is my notes file... It contains study points based on mock exam question mi
 37> Cannot have a break or continue in an 'if' or 'else' block unless the 'if' statement is placed within a labelled block or a switch statement or a loop construct
 38> A constant may be used in a switch(...)
 39> A class name can actually be used as an identifier:  String String = "String";
-40> A switch statement MUST have a body, although the body may be empty.
+40> A switch statement MUST have a body, although the body may be empty. ie {}
 41> Constructors are NEVER inherited.
 42> Boolean operators have more precedence than =. (In fact, = has least precedence)
 43> A 'null' reference may be used to access a class (static) variable without causing an exception.
@@ -54,7 +54,7 @@ This is my notes file... It contains study points based on mock exam question mi
 52> E floor(E e) - Returns the greatest element in this set less than or equal to the given element, or null if there is no such element.
 53> E higher(E e) - Returns the least element in this set STRICTLY greater than the given element, or null if there is no such element.
 54> E lower(E e) - Returns the greatest element in this set STRICTLY less than the given element, or null if there is no such element.
-55> %b implies you are trying to print a value as a boolean.  The rule for conversion to a boolean is a follows:  If the argument arg is null, the the result is "false".  If arg is a boolean or Boolean, then the result is the string reuturned by String.valueOf().  Otherwise, the result is "true".
+55> %b implies you are trying to print a value as a boolean.  The rule for conversion to a boolean is as follows:  If the argument arg is null, the the result is "false".  If arg is a boolean or Boolean, then the result is the string returned by String.valueOf().  Otherwise, the result is "true".
 56> Object's hashcode() method returns a unique hashcode for every object.
 57> An overriding method's return type can be any object that satisfies an IS-A relationship with the overridden method's return type. NOTE: This doesn't apply to primitive return types!
 58> Java 'reuses' all the wrapper objects whose values fall in the following ranges: All Boolean values, All Byte values, All Character values from 0-127 in decimal, All Short and Integer values from -128 - 127
