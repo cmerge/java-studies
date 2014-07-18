@@ -1,0 +1,77 @@
+This is my notes file... It contains study points based on mock exam question mistakes.
+
+1> System.console is NOT guaranteed to return a console instance!  Might just stay null.  So don't use it.
+2> Console.readPassword() returns a char[]!  not a String!
+3> Java is pass by value, always!  Don't be confused by the fact that when passing an object reference, you are still passing the value of that reference variable.  --> @35223h42kj    Something like that there.  It's still a value.  It's just the location in "memory" where the object resides.
+4> for:in loop can NOT use a predefined variable! 
+5> final is the only modifier that is allowed inside of a for:in loop initializer
+6> I don't care what the variable actually references!  It's type determines what the compiler will allow without an explicit cast.
+7> You can have a switch block with no case or default statements in it, but there must not be any other code in there!  ie. empty braces
+8> public void finalize() may be called manually, but there are no guarantees that if will ever be called by garbage collection
+9> A char may be assigned to a byte, but a Character can NOT be assigned to a byte.
+10> implicit narrowing does not apply to method parameters!  example: new Byte(10) won't compile.  new Byte((byte)10) will
+11> wait(), notify() and notifyAll() MUST be called from a synchronized context.
+12> Any exception thrown in a static initializer block will result in a ExceptionInInitializerError.
+13> There is no guarantee that a call to yield() will suspend the calling Thread.
+14> Calling Thread.sleep() will ALWAYS suspend the calling Thread for at least the amount of time specified in the sleep() method.
+15> protected(package and kids) is LESS restrictive than default(package).  This is a "duh" thing that I can't seem to get through my head.
+16> enums are naturally ordered in the order they were defined. They are Singletons and their equals() and hashcode() methods are final
+17> In a switch statement, enums as cases may only use their unqualified identifier per JLS.  So...  LARGE  not  SIZE.LARGE
+18> Static method can not hide an instance method of a superclass
+19> An instance method cannot override a static method of a superclass
+20> StringBuilder and StringBuffer do NOT override equals() or hashcode()!
+21> All Exceptions and Errors extend from Throwable, which extends Object
+22> All Errors are considered unchecked by the compiler
+23> RuntimeExceptions extend Exception, and are the ONLY group of unchecked Exceptions
+24> printf() and format() have the same functionality
+25> File.separator = / or \ depending on system ... / for Mac and \ for Windows
+26> File.pathSeparator = : or ; depending on system
+27> an enum may be referenced by an instance variable of that enum's type without an assignment ever being made.  WIERD!
+28> if a binarySearch() can't find an element it returns (-(insertion point) -1)
+29> You cannot refer to an instance field while explicitly invoking a constructor.
+30> A method-local inner class may be used only after it has been declared.
+31> INT hashcode() <-- hascode() returns an INT!!! not a long
+32> All Interface variables must be marked public static final!  Yes, as in CONSTANTS.
+33> The equals methods of all wrapper classes first check to see if the two objects are of the same class.  If not, it immediately returns false.
+34> String literals are stored in the string pool and therefore are not subject to standard GC.
+35> There can be only one vararg in a method, and it must be the last argument.
+36> A non-static inner class may have static members if you make them final.
+37> Cannot have a break or continue in an 'if' or 'else' block unless the 'if' statement is placed within a labelled block or a switch statement or a loop construct
+38> A constant may be used in a switch(...)
+39> A class name can actually be used as an identifier:  String String = "String";
+40> A switch statement MUST have a body, although the body may be empty.
+41> Constructors are NEVER inherited.
+42> Boolean operators have more precedence than =. (In fact, = has least precedence)
+43> A 'null' reference may be used to access a class (static) variable without causing an exception.
+44> LinkedList implements Queue, so it has add()/offer(), remove()/poll() and element()/peek() methods.
+45> Declaring a new method in an anonymous subclass creates a method that is unreachable from outside the subclass.
+46> When overriding, the return type of the overriding method must match exactly to the return type of the overridden method if the return type is a primitive.
+47> byte range: -128 to 127
+48> A short variable can NEVER be assigned to a char without explicit casting.  A short CONSTANT CAN be if it's value fits into a char.
+49> Any field in an interface is implicitly public, static and final whether these keywords are specified or not.
+50> In a try/finally block, any exception thrown by the try block will be ignored if an exception is also thrown in the the finally block.
+51> E ceiling(E e) - Returns the least element in this set greater than or equal to the given element, or null if there is no suck element.
+52> E floor(E e) - Returns the greatest element in this set less than or equal to the given element, or null if there is no such element.
+53> E higher(E e) - Returns the least element in this set STRICTLY greater than the given element, or null if there is no such element.
+54> E lower(E e) - Returns the greatest element in this set STRICTLY less than the given element, or null if there is no such element.
+55> %b implies you are trying to print a value as a boolean.  The rule for conversion to a boolean is a follows:  If the argument arg is null, the the result is "false".  If arg is a boolean or Boolean, then the result is the string reuturned by String.valueOf().  Otherwise, the result is "true".
+56> Object's hashcode() method returns a unique hashcode for every object.
+57> An overriding method's return type can be any object that satisfies an IS-A relationship with the overridden method's return type. NOTE: This doesn't apply to primitive return types!
+58> Java 'reuses' all the wrapper objects whose values fall in the following ranges: All Boolean values, All Byte values, All Character values from 0-127 in decimal, All Short and Integer values from -128 - 127
+59> All the wrapper classes are immutable.  Integer i = 1; i++; --> actually creates new Integer(i.intValue() + 1)
+60> Abstract classes are MEANT to be overridden.
+61> Literal strings within the same class represent references to the same String object.
+62> Literal strings within different classes in the same package represent references to the same String object.
+63> Literal strings within different classes in different packages represent references to the same String object.
+64> Strings computed by constant expressions are computed at compile time and then treated as if they were literals.
+65> Strings computed at run time are newly created and therefore are distinct.
+66> The result of explicitly interning a computed string is the same string as any pre-existing literal string with the same contents.
+67> <> is not allowed for a source level less than 1.7
+68> super keyword may be used both inside and outside of constructors to reference the superclass of "this".  It can be used to invoke the superclass's version of an overridden method:  super.doStuff()
+69> All operands of type byte, char or short are promoted AT LEAST to an int before performing mathematical operations.
+70> the append() method is in StringBuffer and StringBuilder, NOT String!
+71> String overrides hashCode() and equals().
+72> All keys in a map must be unique, but multiple identical values may exist.
+73> Map is considered part of the Collections Framework, but does not implement the Collection interface.  Don't be tricked by this again!
+74> When a programmer does not define ANY constructor, the complier inserts one automatically , the access modifier of which is the same as that of the class.
+75> cA[1] = cA[0] = 'm'; <--- is valid Java syntax!  Notice the chained assignments.
