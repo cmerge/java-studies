@@ -75,3 +75,6 @@ This is my notes file... It contains study points based on mock exam question mi
 73> Map is considered part of the Collections Framework, but does not implement the Collection interface.  Don't be tricked by this again!
 74> When a programmer does not define ANY constructor, the complier inserts one automatically , the access modifier of which is the same as that of the class.
 75> cA[1] = cA[0] = 'm'; <--- is valid Java syntax!  Notice the chained assignments.
+76> Narrowing Primitive Conversions: double->float->long->int->char->short->byte
+77> Widening Primitive Conversions: byte->short->int->long->float->double   char widens to an int and larger.
+78> If you want to widen a byte or a short to a char, it must first be widened to an int and then narrowed to a char.
