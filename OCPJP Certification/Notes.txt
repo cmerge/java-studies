@@ -78,3 +78,5 @@ This is my notes file... It contains study points based on mock exam question mi
 76> Narrowing Primitive Conversions: double->float->long->int->char->short->byte
 77> Widening Primitive Conversions: byte->short->int->long->float->double   char widens to an int and larger.
 78> If you want to widen a byte or a short to a char, it must first be widened to an int and then narrowed to a char.
+79> Covariant returns are allowed in Java 1.5+, meaning that an overriding method can change the return type of the overridden method to a subclass of the original return type.
+80> 
