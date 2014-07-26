@@ -79,4 +79,18 @@ This is my notes file... It contains study points based on mock exam question mi
 77> Widening Primitive Conversions: byte->short->int->long->float->double   char widens to an int and larger.
 78> If you want to widen a byte or a short to a char, it must first be widened to an int and then narrowed to a char.
 79> Covariant returns are allowed in Java 1.5+, meaning that an overriding method can change the return type of the overridden method to a subclass of the original return type.
-80> 
+80> When a program is run, the JVM looks for a method named main(), which takes an array of strings and has void as a return type.  If not found, it throws java.lang.NoSuchMethodError.
+81> String.substring(int beginIndex) will accept an argument up to/including the length of the string without throwing an IndexOutOfBoundsException.
+82> You can read from as well as write to the java.io.Console class.  ONLY CHARACTER DATA MAY BE READ/WRITTEN
+83> String.split(regex, n) - split the string up to n number of this using pattern regex.  If n = 0, trailing empty strings will be discarded.
+84> Sting.split(regex) - equivalent to calling above method with n = 0.
+85> Object initialization order: static statements/blocks in order, instance statments/blocks in order, finally constructor
+86> int[] array1, array2[]; -- array1 is an array of ints, while array2 is an array of int ARRAYS!
+87> Circular references to objects do not prevent them from being GCed.
+88> Keywords (like do) can not be used to make valid method names.
+89> A class having no abstract methods can still be abstract, but not vice-versa.
+90> Unreachable code will result in a compiler error.
+91> Any numeric comparison operation involving one or two NaNs always returns false and any != comparison returns true, including x != x, when x = NaN.
+92> There is no need to catch a RuntimeException, but it is ok even if the method declares them explicitly.
+93> Java does not allow chained initialization in declaration.  int a, b, c; a=b=c=100; <--YES  int a=b=c=100 <--NO!
+94> 
