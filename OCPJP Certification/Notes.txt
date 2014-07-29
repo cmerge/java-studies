@@ -93,4 +93,8 @@ This is my notes file... It contains study points based on mock exam question mi
 91> Any numeric comparison operation involving one or two NaNs always returns false and any != comparison returns true, including x != x, when x = NaN.
 92> There is no need to catch a RuntimeException, but it is ok even if the method declares them explicitly.
 93> Java does not allow chained initialization in declaration.  int a, b, c; a=b=c=100; <--YES  int a=b=c=100 <--NO!
-94> 
+94> A Comparator determines equality as well as order.
+95> Float.NaN == Float.NaN  --> FALSE!
+96> new Float(NaN).equals(new Float(NaN) --> TRUE!
+97> Cannot use an existing/predefined variable in the variable declaration part of an enhanced for loop. ie int i = 0; for (i: iarray);
+98> 
