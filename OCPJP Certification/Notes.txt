@@ -97,4 +97,8 @@ This is my notes file... It contains study points based on mock exam question mi
 95> Float.NaN == Float.NaN  --> FALSE!
 96> new Float(NaN).equals(new Float(NaN) --> TRUE!
 97> Cannot use an existing/predefined variable in the variable declaration part of an enhanced for loop. ie int i = 0; for (i: iarray);
-98> 
+98> Calling interrupt() will cause an InterruptedException ONLY if the thread on which interrupt() is called, is blocked on an invocation of the wait(...), join(...), or sleep(...) methods of this class.
+99> Unreachable code will cause a compilation error.
+100> Just declaring some object of class 'T',  or even assigning null to T will not cause it's "statics" to be evaluated.
+101> A NavigableSet is a SortedSet extended with navigation methods: lower, floor, ceiling, and higher.
+102> The static modifier only pertains to member classes.
