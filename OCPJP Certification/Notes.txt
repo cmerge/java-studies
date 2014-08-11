@@ -1,11 +1,11 @@
 This is my notes file... It contains study points based on mock exam question mistakes.
 
-1> System.console is NOT guaranteed to return a console instance!  Might just stay null.  So don't use it.
-2> Console.readPassword() returns a char[]!  not a String!
-3> Java is pass by value, always!  Don't be confused by the fact that when passing an object reference, you are still passing the value of that reference variable.  --> @35223h42kj    Something like that there.  It's still a value.  It's just the location in "memory" where the object resides.
-4> for:in loop can NOT use a predefined variable! 
+1> System.console is NOT guaranteed to return a console instance!  Might just return null.  So don't use it without testing its return value first.
+2> Console.readPassword() returns a char[]!  NOT a String!
+3> Java is pass by value, always!  Don't be confused by the fact that when passing an object reference, you are still passing the value of that reference variable.  --> @35223f42ca    Something like that there.  It's still a value.  It's just the location in "memory" where the object resides.
+4> for:in loop can NOT use a predefined variable!
 5> final is the only modifier that is allowed inside of a for:in loop initializer
-6> I don't care what the variable actually references!  It's type determines what the compiler will allow without an explicit cast.
+6> It doesn't matter what the variable actually references!  It's type determines what the compiler will allow without an explicit cast.
 7> You can have a switch block with no case or default statements in it, but there must not be any other code in there!  ie. empty braces
 8> public void finalize() may be called manually, but there are no guarantees that if will ever be called by garbage collection
 9> A char may be assigned to a byte, but a Character can NOT be assigned to a byte.
@@ -73,7 +73,7 @@ This is my notes file... It contains study points based on mock exam question mi
 71> String overrides hashCode() and equals().
 72> All keys in a map must be unique, but multiple identical values may exist.
 73> Map is considered part of the Collections Framework, but does not implement the Collection interface.  Don't be tricked by this again!
-74> When a programmer does not define ANY constructor, the complier inserts one automatically , the access modifier of which is the same as that of the class.
+74> When a programmer does not define ANY constructor, the complier inserts one automatically, the access modifier of which is the same as that of the class.
 75> cA[1] = cA[0] = 'm'; <--- is valid Java syntax!  Notice the chained assignments.
 76> Narrowing Primitive Conversions: double->float->long->int->char->short->byte
 77> Widening Primitive Conversions: byte->short->int->long->float->double   char widens to an int and larger.
@@ -102,3 +102,14 @@ This is my notes file... It contains study points based on mock exam question mi
 100> Just declaring some object of class 'T',  or even assigning null to T will not cause it's "statics" to be evaluated.
 101> A NavigableSet is a SortedSet extended with navigation methods: lower, floor, ceiling, and higher.
 102> The static modifier only pertains to member classes.
+103> Member variables are shadowed and not overridden by subclasses.
+104> If a method has no declaration, then it MUST be marked abstract, and thus the class MUST be marked abstract as well.
+105> A class may be marked abstract and yet have no abstract methods.
+106> String.replace() creates a new String object if there is a change, else it returns the original object.
+107> The increment operator (i++) is NOT atomic, and is therefore not thread-safe.
+108> In a switch() clause, only byte, char, short or int may be used, and every case constant must be assignable to the type of case constant.
+109> The range of a char data type is 0 - 65,535 (0 to 2^16-1).  It is 2 bytes wide like a short, but contains no negative values.
+110> You must provide a type name when instantiating a typed class.  Hashmap<?, List<String>> map = new HashMap<String, List<String>>() ... No ?'s on the right!
+111> The equals() method should be reflexive, symmetric, transitive and consistent.  It should also return false if passed null.
+112> The equals() method of all wrapper classes first check if the two objects are of the same class or not.  If not, they immediately return false.
+113> A final variable must be initialized when an instance is constructed, or else the code will not compile.
