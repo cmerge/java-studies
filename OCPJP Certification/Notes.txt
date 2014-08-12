@@ -3,15 +3,15 @@ This is my notes file... It contains study points based on mock exam question mi
 1> System.console is NOT guaranteed to return a console instance!  Might just return null.  So don't use it without testing its return value first.
 2> Console.readPassword() returns a char[]!  NOT a String!
 3> Java is pass by value, always!  Don't be confused by the fact that when passing an object reference, you are still passing the value of that reference variable.  --> @35223f42ca    Something like that there.  It's still a value.  It's just the location in "memory" where the object resides.
-4> for:in loop can NOT use a predefined variable!
+4> The equals() method should be reflexive, symmetric, transitive and consistent.  It should also return false if passed null.
 5> final is the only modifier that is allowed inside of a for:in loop initializer
 6> It doesn't matter what the variable actually references!  It's type determines what the compiler will allow without an explicit cast.
-7> You can have a switch block with no case or default statements in it, but there must not be any other code in there!  ie. empty braces
-8> public void finalize() may be called manually, but there are no guarantees that if will ever be called by garbage collection
+7> The equals() methods of all wrapper classes first check if the two objects are of the same class or not.  If not, they immediately return false.
+8> public void finalize() may be called manually, but there are no guarantees that it will ever be called by garbage collection
 9> A char may be assigned to a byte, but a Character can NOT be assigned to a byte.
-10> implicit narrowing does not apply to method parameters!  example: new Byte(10) won't compile.  new Byte((byte)10) will
+10> Implicit narrowing does not apply to method parameters!  example: new Byte(10) won't compile.  new Byte((byte)10) will
 11> wait(), notify() and notifyAll() MUST be called from a synchronized context.
-12> Any exception thrown in a static initializer block will result in a ExceptionInInitializerError.
+12> Any exception thrown in a static initializer block will result in an ExceptionInInitializerError.
 13> There is no guarantee that a call to yield() will suspend the calling Thread.
 14> Calling Thread.sleep() will ALWAYS suspend the calling Thread for at least the amount of time specified in the sleep() method.
 15> protected(package and kids) is LESS restrictive than default(package).  This is a "duh" thing that I can't seem to get through my head.
@@ -26,12 +26,12 @@ This is my notes file... It contains study points based on mock exam question mi
 24> printf() and format() have the same functionality
 25> File.separator = / or \ depending on system ... / for Mac and \ for Windows
 26> File.pathSeparator = : or ; depending on system
-27> an enum may be referenced by an instance variable of that enum's type without an assignment ever being made.  WIERD!
-28> if a binarySearch() can't find an element it returns (-(insertion point) -1)
+27> An enum may be referenced by an instance variable of that enum's type without an assignment ever being made.  WIERD!
+28> If a binarySearch() can't find an element it returns (-(insertion point) - 1)
 29> You cannot refer to an instance field while explicitly invoking a constructor.
 30> A method-local inner class may be used only after it has been declared.
-31> INT hashcode() <-- hascode() returns an INT!!! not a long
-32> All Interface variables must be marked public static final!  Yes, as in CONSTANTS.
+31> INT hashcode() <-- hashcode() returns an INT!!! not a long
+32> A Map may not contain itself as a key, although it may contain itself as a value.
 33> The equals methods of all wrapper classes first check to see if the two objects are of the same class.  If not, it immediately returns false.
 34> String literals are stored in the string pool and therefore are not subject to standard GC.
 35> There can be only one vararg in a method, and it must be the last argument.
@@ -54,7 +54,7 @@ This is my notes file... It contains study points based on mock exam question mi
 52> E floor(E e) - Returns the greatest element in this set less than or equal to the given element, or null if there is no such element.
 53> E higher(E e) - Returns the least element in this set STRICTLY greater than the given element, or null if there is no such element.
 54> E lower(E e) - Returns the greatest element in this set STRICTLY less than the given element, or null if there is no such element.
-55> %b implies you are trying to print a value as a boolean.  The rule for conversion to a boolean is as follows:  If the argument arg is null, the the result is "false".  If arg is a boolean or Boolean, then the result is the string returned by String.valueOf().  Otherwise, the result is "true".
+55> %b implies you are trying to print a value as a boolean.  The rule for conversion to a boolean is as follows:  If the argument arg is null, the the result is "false".  If arg is a boolean or Boolean, then the result is the string returned by String.valueOf(arg).  Otherwise, the result is "true".
 56> Object's hashcode() method returns a unique hashcode for every object.
 57> An overriding method's return type can be any object that satisfies an IS-A relationship with the overridden method's return type. NOTE: This doesn't apply to primitive return types!
 58> Java 'reuses' all the wrapper objects whose values fall in the following ranges: All Boolean values, All Byte values, All Character values from 0-127 in decimal, All Short and Integer values from -128 - 127
@@ -82,7 +82,7 @@ This is my notes file... It contains study points based on mock exam question mi
 80> When a program is run, the JVM looks for a method named main(), which takes an array of strings and has void as a return type.  If not found, it throws java.lang.NoSuchMethodError.
 81> String.substring(int beginIndex) will accept an argument up to/including the length of the string without throwing an IndexOutOfBoundsException.
 82> You can read from as well as write to the java.io.Console class.  ONLY CHARACTER DATA MAY BE READ/WRITTEN
-83> String.split(regex, n) - split the string up to n number of this using pattern regex.  If n = 0, trailing empty strings will be discarded.
+83> String.split(regex, n) - split the string up to n-1 times using pattern regex.  If n = 0, trailing empty strings will be discarded.
 84> Sting.split(regex) - equivalent to calling above method with n = 0.
 85> Object initialization order: static statements/blocks in order, instance statments/blocks in order, finally constructor
 86> int[] array1, array2[]; -- array1 is an array of ints, while array2 is an array of int ARRAYS!
@@ -97,20 +97,17 @@ This is my notes file... It contains study points based on mock exam question mi
 95> Float.NaN == Float.NaN  --> FALSE!
 96> new Float(NaN).equals(new Float(NaN) --> TRUE!
 97> Cannot use an existing/predefined variable in the variable declaration part of an enhanced for loop. ie int i = 0; for (i: iarray);
-98> Calling interrupt() will cause an InterruptedException ONLY if the thread on which interrupt() is called, is blocked on an invocation of the wait(...), join(...), or sleep(...) methods of this class.
-99> Unreachable code will cause a compilation error.
+98> Calling interrupt() on a thread will cause an InterruptedException ONLY if that thread is blocked on an invocation of the wait(...), join(...), or sleep(...) method.
+99> Valid identifiers cannot start with a digit!
 100> Just declaring some object of class 'T',  or even assigning null to T will not cause it's "statics" to be evaluated.
 101> A NavigableSet is a SortedSet extended with navigation methods: lower, floor, ceiling, and higher.
-102> The static modifier only pertains to member classes.
+102> Only member classes may be marked static.
 103> Member variables are shadowed and not overridden by subclasses.
-104> If a method has no declaration, then it MUST be marked abstract, and thus the class MUST be marked abstract as well.
+104> A final variable must be initialized when an instance is constructed, otherwise the code will not compile.
 105> A class may be marked abstract and yet have no abstract methods.
-106> String.replace() creates a new String object if there is a change, else it returns the original object.
+106> String.replace() creates a new String object if there is a change, otherwise it returns the original object.
 107> The increment operator (i++) is NOT atomic, and is therefore not thread-safe.
-108> In a switch() clause, only byte, char, short or int may be used, and every case constant must be assignable to the type of case constant.
+108> In a switch() clause, only byte, char, short or int may be used, and every case constant must be assignable to the type of the switch expression.
 109> The range of a char data type is 0 - 65,535 (0 to 2^16-1).  It is 2 bytes wide like a short, but contains no negative values.
 110> You must provide a type name when instantiating a typed class.  Hashmap<?, List<String>> map = new HashMap<String, List<String>>() ... No ?'s on the right!
-111> The equals() method should be reflexive, symmetric, transitive and consistent.  It should also return false if passed null.
-112> The equals() method of all wrapper classes first check if the two objects are of the same class or not.  If not, they immediately return false.
-113> A final variable must be initialized when an instance is constructed, or else the code will not compile.
-114> Valid identifiers cannot start with a digit!
+111> 
