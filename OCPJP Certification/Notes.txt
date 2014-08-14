@@ -110,4 +110,4 @@ This is my notes file... It contains study points based on mock exam question mi
 108> In a switch() clause, only byte, char, short or int may be used, and every case constant must be assignable to the type of the switch expression.
 109> The range of a char data type is 0 - 65,535 (0 to 2^16-1).  It is 2 bytes wide like a short, but contains no negative values.
 110> You must provide a type name when instantiating a typed class.  Hashmap<?, List<String>> map = new HashMap<String, List<String>>() ... No ?'s on the right!
-111> 
+111> An abstract class can have a constructor.
