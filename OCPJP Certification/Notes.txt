@@ -111,3 +111,7 @@ This is my notes file... It contains study points based on mock exam question mi
 109> The range of a char data type is 0 - 65,535 (0 to 2^16-1).  It is 2 bytes wide like a short, but contains no negative values.
 110> You must provide a type name when instantiating a typed class.  Hashmap<?, List<String>> map = new HashMap<String, List<String>>() ... No ?'s on the right!
 111> An abstract class can have a constructor.
+112> A source file is not required to have a class marked public in it, however, if there is a public class in the file, the file's name must match that class's name.
+113> You do not need an explicit cast to use a unary operator: byte b = 4; b++;
+114> An anonymous inner class can NOT have a constructor...after all, what would you name it?
+115> When performing an arithmetic operation on primitive values, the result will be treated as AT LEAST an int.
