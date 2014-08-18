@@ -104,7 +104,7 @@ This is my notes file... It contains study points based on mock exam question mi
 102> Only member classes may be marked static.
 103> Member variables are shadowed and not overridden by subclasses.
 104> A final variable must be initialized when an instance is constructed, otherwise the code will not compile.
-105> A class may be marked abstract and yet have no abstract methods.
+105> A class can not be imported statically.
 106> String.replace() creates a new String object if there is a change, otherwise it returns the original object.
 107> The increment operator (i++) is NOT atomic, and is therefore not thread-safe.
 108> In a switch() clause, only byte, char, short or int may be used, and every case constant must be assignable to the type of the switch expression.
@@ -121,4 +121,3 @@ This is my notes file... It contains study points based on mock exam question mi
 119> A call to System.gc() is equivalent to calling Runtime.getRuntime().gc()
 120> The default number of decimal places that %f prints is 6.
 121> There is no DateFormat.getDateInstance(Locale l) method.  A style must be supplied with the locale or no arguments should be given.
-122> A class can not be imported statically.
