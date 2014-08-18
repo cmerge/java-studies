@@ -115,3 +115,10 @@ This is my notes file... It contains study points based on mock exam question mi
 113> You do not need an explicit cast to use a unary operator: byte b = 4; b++;
 114> An anonymous inner class can NOT have a constructor...after all, what would you name it?
 115> When performing an arithmetic operation on primitive values, the result will be treated as AT LEAST an int.
+116> A returned subSet will throw an IllegalArgumentException if an attempt is made to add an element that is outside its range.
+117> In a switch construct, case default: ... is sytactically wrong, it should just be default: ...
+118> A private member of an inner class is accessible to that class's outer class.
+119> A call to System.gc() is equivalent to calling Runtime.getRuntime().gc()
+120> The default number of decimal places that %f prints is 6.
+121> There is no DateFormat.getDateInstance(Locale l) method.  A style must be supplied with the locale or no arguments should be given.
+122> A class can not be imported statically.
