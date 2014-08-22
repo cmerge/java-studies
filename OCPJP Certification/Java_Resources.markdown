@@ -6,6 +6,8 @@
 - OCP Java SE 6 Programmer Practice Exams, Sierra and Bates
 - Sams Teach Yourself Java in 21 Days, Rogers Cadenhead
     * This book was my first exposure to Java.
+- Head First Java, Kathy Sierra
+- Effective Java, Joshua Bloch
  
 ## Podcasts
 - How to Program with Java Podcast, Trevor Page
