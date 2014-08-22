@@ -66,7 +66,7 @@ This is my notes file... It contains study points based on mock exam question mi
 64> Strings computed by constant expressions are computed at compile time and then treated as if they were literals.
 65> Strings computed at run time are newly created and therefore are distinct.
 66> The result of explicitly interning a computed string is the same string as any pre-existing literal string with the same contents.
-67> <> is not allowed for a source level less than 1.7
+67> The diamond "<>" is not allowed for a source level less than 1.7
 68> super keyword may be used both inside and outside of constructors to reference the superclass of "this".  It can be used to invoke the superclass's version of an overridden method:  super.doStuff()
 69> All operands of type byte, char or short are promoted AT LEAST to an int before performing mathematical operations.
 70> the append() method is in StringBuffer and StringBuilder, NOT String!
@@ -83,7 +83,7 @@ This is my notes file... It contains study points based on mock exam question mi
 81> String.substring(int beginIndex) will accept an argument up to/including the length of the string without throwing an IndexOutOfBoundsException.
 82> You can read from as well as write to the java.io.Console class.  ONLY CHARACTER DATA MAY BE READ/WRITTEN
 83> String.split(regex, n) - split the string up to n-1 times using pattern regex.  If n = 0, trailing empty strings will be discarded.
-84> Sting.split(regex) - equivalent to calling above method with n = 0.
+84> String.split(regex) - equivalent to calling String.split(regex, 0)
 85> Object initialization order: static statements/blocks in order, instance statments/blocks in order, finally constructor
 86> int[] array1, array2[]; -- array1 is an array of ints, while array2 is an array of int ARRAYS!
 87> Circular references to objects do not prevent them from being GCed.
